@@ -1,0 +1,86 @@
+call plug#begin('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe'
+" Plug 'whatyouhide/vim-gotham'
+" Plug 'gosukiwi/vim-smartpairs'
+" Plug 'tomasiser/vim-code-dark'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" If you don't like many colors and prefer the conservative style of the standard Visual Studio
+" let g:codedark_conservative=1
+" If you like the new dark modern colors (Needs feedback!)
+" let g:codedark_modern=1
+" Activates italicized comments (make sure your terminal supports italics)
+" let g:codedark_italics=1
+" Make the background transparent
+" let g:codedark_transparent=1
+" If you have vim-airline, you can also enable the provided theme
+" let g:airline_theme = 'codedark'
+syntax on
+" colorscheme codedark 
+
+" codedark settings
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+
+let g:ycm_global_ycm_extra_conf = '${HOME}/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_autoclose_preview_window_after_insertion = 1
+set splitbelow
+ 
+" バックアップファイルを作らない
+set nobackup
+ 
+" スワップファイルを作らない
+set noswapfile
+ 
+"インデントをスペース4つに
+set tabstop=4
+set shiftwidth=4
+" 
+" " エンコーディング
+set encoding=utf-8
+scriptencoding utf-8
+ 
+" "jキーを二度押しでESCキー
+inoremap <silent> jj <Esc>
+inoremap <silent> っj <ESC>
+ 
+"行番号を表示
+set number
+ 
+" カーソルを棒状に
+set cursorline
+ 
+"オートコンプリート使用時のドロップダウン・ウィンドウの削除
+set completeopt-=preview
+
+"書き込み時間診断を無効にする
+let g:ycm_show_diagnostics_ui = 0
+
+set backspace=indent,eol,start
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
+
+set showmatch " 括弧の対応関係を一瞬表示する
+source $VIMRUNTIME/macros/matchit.vim " Vimの「%」を拡張する
+
+set wildmenu " コマンドモードの補完
+set history=5000 " 保存するコマンド履歴の数
+highlight CursorLine cterm=none ctermbg=none
+set wildmenu " コマンド補完を強化
+set mouse=a " マウス操作を有効化
+set nowrap " 行を折り返さない
+set ttyfast " 高速なターミナルを使用
+" set clipboard=unnamed,autoselect
+
