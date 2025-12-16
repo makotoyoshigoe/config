@@ -4,10 +4,10 @@ set -g prefix C-a
 # デフォルトのprefixキーC-bを解除する
 unbind C-b
 
-# prefix+\でペインを垂直分割する
+# Ctrl+eでペインを垂直分割する
 bind -n C-e split-window -h
 
-# prefix+-でペインを水平分割する
+# Ctrl+oでペインを水平分割する
 bind -n C-o split-window -v
 
 # ペインの移動
